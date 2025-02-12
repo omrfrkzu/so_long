@@ -6,13 +6,14 @@
 /*   By: omkuzu <omkuzu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 19:53:22 by omkuzu            #+#    #+#             */
-/*   Updated: 2025/02/11 17:54:29 by omkuzu           ###   ########.fr       */
+/*   Updated: 2025/02/12 18:59:41 by omkuzu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minilibx-linux/mlx.h"
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 #include "so_long.h"
 
 int	key_hook(int keycode, void *param)
@@ -42,6 +43,7 @@ void	counter(t_data *data, int plus)
 	draw_original_block(data, 0, 0);
 	draw_original_block(data, 1, 0);
 	mlx_string_put(data->mlx, data->window, 50, 50, 0x000000, itoa);
+	printf("Moves: %s\n", itoa);
 	free(itoa);
 }
 
